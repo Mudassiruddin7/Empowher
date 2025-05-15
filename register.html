@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Women Empowerment</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Women Empowerment</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" id="loginBtn">Sign In</a>
+        </div>
+    </nav>
+
+    <main class="register-container">
+        <div class="registration-steps">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Basic Info</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Choose Role</div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Role Details</div>
+            </div>
+        </div>
+
+        <div class="registration-forms">
+            <!-- Step 1: Basic Information -->
+            <form id="basicInfoForm" class="registration-form active">
+                <h2>Create Your Account</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Phone Number</label>
+                    <input type="tel" id="regPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <button type="button" class="btn-primary next-step">Continue</button>
+            </form>
+
+            <!-- Step 2: Role Selection -->
+            <form id="roleSelectionForm" class="registration-form">
+                <h2>Choose Your Role</h2>
+                <p class="form-description">Select the role that best describes your purpose on our platform</p>
+                
+                <div class="role-grid">
+                    <div class="role-card" data-role="entrepreneur">
+                        <div class="role-icon">👩‍💼</div>
+                        <h3>Entrepreneur</h3>
+                        <p>Start and grow your business with our resources and community support</p>
+                        <ul class="role-features">
+                            <li>Access to funding opportunities</li>
+                            <li>Business planning tools</li>
+                            <li>Mentorship programs</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-card" data-role="supplier">
+                        <div class="role-icon">📦</div>
+                        <h3>Supplier</h3>
+                        <p>Connect with businesses and expand your market reach</p>
+                        <ul class="role-features">
+                            <li>B2B marketplace access</li>
+                            <li>Supply chain integration</li>
+                            <li>Verified business network</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-card" data-role="mentor">
+                        <div class="role-icon">👩‍🏫</div>
+                        <h3>Mentor</h3>
+                        <p>Share your expertise and guide aspiring entrepreneurs</p>
+                        <ul class="role-features">
+                            <li>Mentorship dashboard</li>
+                            <li>Schedule management</li>
+                            <li>Resource sharing tools</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-card" data-role="funder">
+                        <div class="role-icon">💰</div>
+                        <h3>Funder</h3>
+                        <p>Invest in promising women-led businesses and initiatives</p>
+                        <ul class="role-features">
+                            <li>Investment opportunities</li>
+                            <li>Portfolio management</li>
+                            <li>Due diligence tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary prev-step">Back</button>
+                    <button type="button" class="btn-primary next-step" disabled>Continue</button>
+                </div>
+            </form>
+
+            <!-- Step 3: Role-specific Details -->
+            <form id="roleDetailsForm" class="registration-form">
+                <h2>Complete Your Profile</h2>
+                <div id="entrepreneurDetails" class="role-details">
+                    <div class="form-group">
+                        <label for="businessName">Business Name</label>
+                        <input type="text" id="businessName">
+                    </div>
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <select id="businessType">
+                            <option value="">Select business type</option>
+                            <option value="startup">Startup</option>
+                            <option value="small">Small Business</option>
+                            <option value="medium">Medium Enterprise</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="supplierDetails" class="role-details">
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName">
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategories">Product Categories</label>
+                        <select id="productCategories" multiple>
+                            <option value="fashion">Fashion & Textiles</option>
+                            <option value="food">Food & Beverages</option>
+                            <option value="tech">Technology</option>
+                            <option value="crafts">Arts & Crafts</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="mentorDetails" class="role-details">
+                    <div class="form-group">
+                        <label for="expertise">Areas of Expertise</label>
+                        <select id="expertise" multiple>
+                            <option value="business">Business Strategy</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="finance">Finance</option>
+                            <option value="tech">Technology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" min="1">
+                    </div>
+                </div>
+
+                <div id="funderDetails" class="role-details">
+                    <div class="form-group">
+                        <label for="investmentRange">Investment Range</label>
+                        <select id="investmentRange">
+                            <option value="">Select range</option>
+                            <option value="seed">Seed ($10k-$50k)</option>
+                            <option value="early">Early Stage ($50k-$200k)</option>
+                            <option value="growth">Growth ($200k+)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sectors">Preferred Sectors</label>
+                        <select id="sectors" multiple>
+                            <option value="tech">Technology</option>
+                            <option value="retail">Retail</option>
+                            <option value="health">Healthcare</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary prev-step">Back</button>
+                    <button type="submit" class="btn-primary">Complete Registration</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="scripts/register.js"></script>
+    <script src="scripts/chatbot.js"></script>
+</body>
+</html>
